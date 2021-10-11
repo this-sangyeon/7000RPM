@@ -87,5 +87,6 @@ const todos = [
 // console.log(index);
 
 // const todo =  todos.find(todo => todo.id === 3)
+// find는 찾은 값 자체를 반환해주는 것
 const todo =  todos.find(todo => todo.done === false)
 console.log(todo);
