@@ -83,4 +83,4 @@ console.log(0 || '제로다');
 console.log(1 || '음?');
 console.log(ture || '여기 안본다');
 console.log('와아'||'여기 안봐요');
-console.log([]||'노노!');
+console.log([]||'노노!!');
