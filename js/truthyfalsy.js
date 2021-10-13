@@ -69,7 +69,7 @@
 // if(value){
 //     console.log('value가 truthy 하네요.');
 // }
-
+//
 const value = 4;
 // const truthy = value ? true : flase;
 const truthy = !!value

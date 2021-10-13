@@ -5,7 +5,7 @@
 const todos = [
     {
       id: 1,
-      text: "자바스크립트 입문",
+      text: "자바스크립트 입문!",
       done: true
     },
     {

@@ -1,5 +1,5 @@
 // function calculateCircleArea(r){
-function calculateCircleArea(r =){
+function calculateCircleArea(r){
     // const radius = r ||  1;
     return Math.PI * r * r;
     // //만약 r이 주어지지 않았다면 기본값은 1로
