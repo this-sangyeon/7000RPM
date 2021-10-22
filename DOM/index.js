@@ -23,8 +23,34 @@
 //querySelector 는 포함되는 객채가 여러개더라도 맨 처음 인덱스만 가져오게 된다.
 // const testImg= document.querySelector('.testimg');
 // querySelectorAll = 모두 다 가져오자! 배열처럼 출력된다.
-const testImg= document.querySelectorAll('.testimg');
+// let testImg= document.querySelectorAll('.testimg img');
+// for(let i =0; i < testImg.length;i++){
+//     testImg[i].style.border = '1px solid red';
+// }
 // testimg 중에서 두번째 것을 가지고 오고 싶다면
 // 배열-인덱스 번호 지정하여 출력
 // console.log(testImg[1]);
-console.log(testImg);
+// console.log(testImg);
+
+
+// ---------------------------------------!
+
+// 3
+// 속성의 값을 세팅해주거나 가져오는 것
+// getAttribute(), setAttribute()
+const link = document.querySelector('.testimg a');
+// a에 걸려있는 링크가 궁금할 때는 href 가져오면 된다.
+// link 가 가진 메서드를 불러와준다.
+//> getAttribute(! 이 안에 문자열로 가져오려는 속성을 적어주면 된다. )
+// 만약 class나 id명도 불러오고 싶다면 class나 id를 문자열로 적어주면 된다.
+console.log(link.getAttribute('href'));
+console.log(link.getAttribute('class'));
+
+// 가져오는 거 뿐만 아니라 세팅도 하고 싶을 때
+// setAttribute('속성이름', '새롭게 불러올 무언가' )는 매개변수가 2개이다.
+link.setAttribute('href', 'https://www.naver.com')
+console.log(link.getAttribute('href'));
+
+
+// ---------------------------------------!
+
