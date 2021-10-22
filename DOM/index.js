@@ -97,15 +97,16 @@
 
 //6
 // html에 태그를 추가하고 싶을 때
-const listUlElem = document.querySelector('.testul');
-const listElem = document.createElement('li');
+// const listUlElem = document.querySelector('.testul');
+// const listElem = document.createElement('li');
 
-// 생성된 엘리맨트 li 안에 태그/ 텍스트 등을 추가할 수 있다.
-listElem.innerHTML ='<span>소피아</span>';
-// append = 덧붙이다.
-// 자녀로 추가할 엘리먼트를 넣어준다.
-listUlElem.appendChild(listElem);
-console.log(listElem);
+// // 생성된 엘리맨트 li 안에 태그/ 텍스트 등을 추가할 수 있다.
+// listElem.innerHTML ='<span>소피아</span>';
+// // append = 덧붙이다.
+// // 자녀로 추가할 엘리먼트를 넣어준다.
+// listUlElem.appendChild(listElem);
+// console.log(listElem);
 // 만들어진 태그를 html 어느 구조에 지정해줄지 정한다.
 // li의 상위(부모)노드에 실행해줘야 한다.
+// ex/ 리스트 하나가 추가되는 기능을 구현
 
