@@ -76,26 +76,73 @@ var menuLinks = document.querySelectorAll('.menu-link');
 // }
 
 // 4
+// 이벤트 위임
+// var currentMenu; 
+// var menu = document.querySelector('.menu');
 
+// // 함수가 이벤트 핸들러로 실행이 됐을 때 1
+// // 첫번째 매개변수로 자동으로 들어오는 것이 있다.
+// // 그것을 이용하거나 확인하려면 들어올 자리를 만들어줘야 한다.
+// // e라는 변수를 만들어줬다.
+// // 함수가 이벤트 핸들러로 실행이 됐을 때 2
+// // 첫번째 매개변수 자리에 이벤트 객채가 들어온다.
+// // 이벤트 객체란 발생할 이벤트에 대한 많은 정보들을 담고 있는 것
+// // ex: 어느 위치를 클릭했는가, 클릭한 것이 무엇인지. 마우스를 움직일 때마다 좌표값
+// function clickMenuHandler(e){
+//     // console.log(this);
+//     // this와 값이 똑같다.
+//     // console.log(e.currentTarget);
+//     // console.log(this === e.currentTarget);
+
+//      // target은 진짜 내가 누른 것의 값을 가져온다.
+//      if(currentMenu){
+//          currentMenu.classList.remove('menu-active');
+//      }
+//      e.target.classList.add('menu-active');
+//      currentMenu = e.target;
+//      console.log(e.target);
+// }
+// // this 내가 클릭한 것
+// // this => addEventListener로 호출한 객체
+// menu.addEventListener('click',clickMenuHandler);
+
+
+// 5 
+// 이벤트 위임 = 다른방ㅇ식
+// 구조적으론 제일 바람직하다.
+// 처음에 페이지를 열었을 때 1번이 활성화된 상태였으면 좋겠다.
+//
+var currentMenu; 
 var menu = document.querySelector('.menu');
 
-// 함수가 이벤트 핸들러로 실행이 됐을 때 1
-// 첫번째 매개변수로 자동으로 들어오는 것이 있다.
-// 그것을 이용하거나 확인하려면 들어올 자리를 만들어줘야 한다.
-// e라는 변수를 만들어줬다.
-// 함수가 이벤트 핸들러로 실행이 됐을 때 2
-// 첫번째 매개변수 자리에 이벤트 객채가 들어온다.
-// 이벤트 객체란 발생할 이벤트에 대한 많은 정보들을 담고 있는 것
-// ex: 어느 위치를 클릭했는가, 클릭한 것이 무엇인지. 마우스를 움직일 때마다 좌표값
+// 
+function activate(elem){
+    // 활성화
+    // 엘리먼트에 menu-active 추가하고
+    elem.classList.add('menu-active');
+    // currentMenu에 갱신
+    currentMenu = elem;
+}
+
+// elem가 들어온다면?
+function inactivate(elem){
+    // 비활성화
+    if(currentMenu){
+        // 무엇이됐던... elem 적어주기
+        elem.classList.remove('menu-active');
+    }
+}
+
 function clickMenuHandler(e){
-    // console.log(this);
-    // this와 값이 똑같다.
-    // console.log(e.currentTarget);
-    // console.log(this === e.currentTarget);
-    
-     // target은 진짜 내가 누른 것의 값을 가져온다.
-     console.log(e.target);
+     if(currentMenu){
+         //currentMenu를 넣어 호출을 하고
+        inactivate(currentMenu);
+     }
+     activate(e.target);
 }
 // this 내가 클릭한 것
 // this => addEventListener로 호출한 객체
 menu.addEventListener('click',clickMenuHandler);
+
+activate(document.querySelectorAll('.menu-link')[0]);
+
