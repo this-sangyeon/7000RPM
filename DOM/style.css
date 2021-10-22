@@ -11,3 +11,11 @@ h1{
 .testimg img{
    height: 100px;
 }
+
+.link-google{
+   color:red;
+}
+
+.special{
+    background: pink;
+}
