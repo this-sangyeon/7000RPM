@@ -67,8 +67,9 @@
 
 // 5
 //  class 추가, 삭제
+// add, remove, contains
 
-const link = document.querySelector('.testimg a');
+// const link = document.querySelector('.testimg a');
 // 먼저 a에 걸려있던 class가 className을 추가하자 아래의 클래스로 교체되었다.
 // class 속성의 값을 바꿔버린다.
 // link.className ='special';
@@ -78,14 +79,33 @@ const link = document.querySelector('.testimg a');
 // 내가 넣고 싶은 속성을 추가하고 싶을 때
 // css의 class들에 관련된 기능을 가지고 있다.
 //classList.add() 클래스를 추가하겠다
-link.classList.add('special');
+// link.classList.add('special');
 //클래스를 여러개 추가하고 싶을 때 쉼표 하고 이어주면 된다.
-link.classList.add('special','foo');
+// link.classList.add('special','foo');
 //classList.remove() 클래스를 삭제하겠다.
-link.classList.remove('link-google');
+// link.classList.remove('link-google');
 // 2초 뒤에 함수를 실행하겠다.
 // 2초 뒹에 클래스를 삭제하겠다.
-setTimeout(()=>{
-    link.classList.remove('link-google');
-},2000);
+// setTimeout(()=>{
+//     link.classList.remove('link-google');
+// },2000);
+// // contain = 포함하다
+// // contains 라는 메서드 자체가 true/false를 리턴해줍니다.
+// console.log(link.classList.contains('special'));
+
+// ---------------------------------------!
+
+//6
+// html에 태그를 추가하고 싶을 때
+const listUlElem = document.querySelector('.testul');
+const listElem = document.createElement('li');
+
+// 생성된 엘리맨트 li 안에 태그/ 텍스트 등을 추가할 수 있다.
+listElem.innerHTML ='<span>소피아</span>';
+// append = 덧붙이다.
+// 자녀로 추가할 엘리먼트를 넣어준다.
+listUlElem.appendChild(listElem);
+console.log(listElem);
+// 만들어진 태그를 html 어느 구조에 지정해줄지 정한다.
+// li의 상위(부모)노드에 실행해줘야 한다.
 
