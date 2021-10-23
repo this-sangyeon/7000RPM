@@ -65,3 +65,22 @@ cite{
     -webkit-transition: all .3s ease-in;
     transition:.3s ease-in;
 }
+/* 
+슬라이드 버튼이 맨 처음에 가 있으면 < 버튼이 사라지고 맨 마지막에 가면 > 버튼이 사라지게 설정하기 위해 
+disabled = 불능 
+css에서 모든 설계가 다 끝나있다!!!!
+*/
+#prev.disabled, #next.disabled{display: none;}
+
+#prev{
+    background-color:cornflowerblue; margin-left:-480px;
+}
+#prev:hover{
+    background-color:aquamarine;
+}
+#next{
+    background-color:indianred; margin-left:380px;
+}
+#next:hover{
+    background-color:lightcoral;
+}
