@@ -42,3 +42,26 @@ body{
     -webkit-transition: left .3s ease-in;
     transition: left .3s ease-in;
 }
+
+blockquote{
+    color:#636363;
+    font-weight: 300; font-style:italic;margin-bottom:1.5em;
+}
+cite{
+    font-size:.75em; font-weight: 700; font-style: normal;
+}
+
+/* 유틸리티 */
+.simple-list{
+    list-style-type:none; margin:0; padding:0;
+}
+
+/* 네비게이션 */
+#prev,
+#next{
+    position: absolute;top:50%;left:50%; transform: translateY(-50%);
+    z-index: 999999; display: inline-block; height: 5em; width: 5em;
+    border-radius: 50%; background-position: center center; background-repeat: no-repeat;
+    -webkit-transition: all .3s ease-in;
+    transition:.3s ease-in;
+}
