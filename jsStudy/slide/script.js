@@ -86,7 +86,7 @@ function goToSlide(idx){
     // 저장값은 0이었지만 다음 버튼을 눌러서 1이 넘어와서 이동을 한 상태에서
     // currentIndex 에 새로운 idx값이 담기게 되고 계속 갱신해준다.
     currentIndex = idx;
-    updateNav();
+    // updateNav();
 }
 
 
@@ -101,7 +101,7 @@ function updateNav(){
         navPrev.classList.remove('disabled');
     }
     // 슬라이드의 마지막일 때
-    if(currentIndex == slideCount-1){
+    if(currentIndex == slideCount - 1){
         navNext.classList.add('disabled');
     }else{
         navNext.classList.remove('disabled');
@@ -115,14 +115,43 @@ function updateNav(){
 navPrev.addEventListener('click',function(e){
     e.preventDefault();
     // 이전 버튼을 누르면 현재 currentIndex 값의 -1을 하고
-    goToSlide(currentIndex - 1);
+    // 이미 첫화면인데도 이전버튼을 눌렀을 때 마지막 슬라이드가 나왔으면 좋겠다.
+    // 처음이 아니라면 하나씩 이동하는 것
+    // goToSlide(currentIndex - 1);
+    // 처음이라면 goToSlide()
+    // currentIndex > 0
+    if(currentIndex != 0){
+        goToSlide(currentIndex - 1);
+    }else{
+        goToSlide(slideCount - 1);
+    }
+
+
+
+    
 })
 navNext.addEventListener('click',function(e){
     // 기본적으로 a태그이기 때문에 기본속성을 없애줘야 한다.
     e.preventDefault();
     // 이전 버튼을 누르면 현재 currentIndex 값의 1을 하고
-    goToSlide(currentIndex + 1);
+    // goToSlide(currentIndex + 1);
+    // slideCount번호가 5보다 작을 때 슬라이드가 움직여라
+    if(currentIndex < slideCount - 1){
+        goToSlide(currentIndex + 1);
+    }else{
+        // 끝까지 왔을 때 다시 첫화면으로 
+        goToSlide(0);
+    }
 })
 
 // 시작하자마자 첫번째 슬라이드 먼저 보이게 하기
-goToSlide(0);
+// 첫 슬라이드가 보이지만 이전버튼이 그대로 보인다.
+// 그냥 슬라이드 개념으로, 무한 슬라이드를 하지 않고 처음이면 처음 끝이면 끝 하려면 여기서 멈춰도 된다.
+goToSlide(0); 
+
+
+// 하지만 무한 루프를 한다면??
+ // updateNav(); 가 실행되면 안된다.
+//  클릭하면 이동하는 부분에서 식을 추가해야 한다.
+// 버튼 클릭 함수들로 다시 돌아가보자
+
