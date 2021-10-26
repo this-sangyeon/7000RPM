@@ -1,8 +1,5 @@
-html{
-    width: 100%; height: 100%;
-}
+
 body{
-    width: 100%; height: 100%;
     margin-top:5em;
     font:20px/1.5;
     color:black;
@@ -25,7 +22,7 @@ body{
     position: absolute; width: 100%;
 }
 
-.slider{
+.slide{
     /* 
     width가 있는 상태에서 padding을 주면 사이즈가 늘어나기 때문에
     box-sizing 적용...
@@ -48,7 +45,7 @@ blockquote{
     font-weight: 300; font-style:italic;margin-bottom:1.5em;
 }
 cite{
-    font-size:.75em; font-weight: 700; font-style: normal;
+    font-size:.75em; font-weight: 700; font-style: normal; 
 }
 
 /* 유틸리티 */
@@ -71,7 +68,6 @@ disabled = 불능
 css에서 모든 설계가 다 끝나있다!!!!
 */
 #prev.disabled, #next.disabled{display: none;}
-
 #prev{
     background-color:cornflowerblue; margin-left:-480px;
 }
