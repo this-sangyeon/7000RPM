@@ -64,19 +64,65 @@ calulateTallestSlide();// 함수 실행
         slides[0].style.left = ???? + '%';
     }
 */
-function slideLeftMove(){
+// function slideLeftMove(){
     for(let i = 0; i < slideCount; i++){
         // i의 값마다 100%를 추가한다.
         // 그럼 가로로 정렬된다.
         // 마치 flex처럼
         slides[i].style.left = i*100 + '%';
     }
-}
-slideLeftMove();
+// }
+// slideLeftMove();
 
 
 // 슬라이드 이동 함수
+// 슬라이드가 직접 움직이는 것이 아니라 슬라이드를 감싸고 있는 ul이 움직이는 것이다
+
+function goToSlide(idx){
+    // 입력값이 있어야 한다.
+    // 반드시 매개변수가 있어야 한다.
+    sliderContainer[0].style.left = idx * -100 + '%';
+    sliderContainer[0].classList.add('active');
+    // 저장값은 0이었지만 다음 버튼을 눌러서 1이 넘어와서 이동을 한 상태에서
+    // currentIndex 에 새로운 idx값이 담기게 되고 계속 갱신해준다.
+    currentIndex = idx;
+    updateNav();
+}
+
+
 
 // 버튼 기능 업데이트 함수
 
+function updateNav(){
+    // 처음일 때;
+    if(currentIndex == 0){
+        navPrev.classList.add('disabled');
+    }else{
+        navPrev.classList.remove('disabled');
+    }
+    // 슬라이드의 마지막일 때
+    if(currentIndex == slideCount-1){
+        navNext.classList.add('disabled');
+    }else{
+        navNext.classList.remove('disabled');
+    }
+}
+
+
+
 // 버튼을 클릭하면 슬라이드 이동하기 
+
+navPrev.addEventListener('click',function(e){
+    e.preventDefault();
+    // 이전 버튼을 누르면 현재 currentIndex 값의 -1을 하고
+    goToSlide(currentIndex - 1);
+})
+navNext.addEventListener('click',function(e){
+    // 기본적으로 a태그이기 때문에 기본속성을 없애줘야 한다.
+    e.preventDefault();
+    // 이전 버튼을 누르면 현재 currentIndex 값의 1을 하고
+    goToSlide(currentIndex + 1);
+})
+
+// 시작하자마자 첫번째 슬라이드 먼저 보이게 하기
+goToSlide(0);

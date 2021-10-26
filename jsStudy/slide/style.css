@@ -35,9 +35,9 @@ body{
 }
 
 /* lider-container에 animated가 들어오면 애니메이션 실행*/
-.slider-container.animated{
-    -webkit-transition: left .3s ease-in;
-    transition: left .3s ease-in;
+.slider-container.active{
+    -webkit-transition: left 0.3s ease-in;
+    transition: left 0.3s ease-in;
 }
 
 blockquote{
