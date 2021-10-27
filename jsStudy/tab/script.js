@@ -18,12 +18,35 @@
 
 
 // 변수 선언
-const targerLink = document.querySelector('.tab-menu a')
-let orgTarget = '#tabs-1';
+let targetLink = document.querySelectorAll('.tab-menu a');
+let tabContent = document.querySelectorAll('#tab-content > div');
+console.log(tabContent); 
+// a 태그마다 할 일로 접근해야 한다.
+for(let i = 0; i < targetLink.length;i++){
+    // targerLink을 클릭하면 할 일
+    targetLink[i].addEventListener('click',function(e){
+        // a링크의 기본속성을 막아준다.
+        e.preventDefault();
+        // 어떤 걸 클릭해야되는지 알려면 반드시 본인을 적어주어야 한다.
+        // e, ev, event 등 변수 지정
+        // 요소의 속성을 가져오는 방법 getAttribute();
+        let orgTarget =  e.target.getAttribute('href');
+        // console.log(orgTarget);
+
+        let tabTarget = orgTarget.replace('#', '');
+        // tabContent들을 선택해서 그중 원하는 것만 실행되도록 해야한다.
+        document.getElementById(tabTarget).style.display = 'block';
+    
+    });
+}
+
+
+console.log(targetLink);
+// let orgTarget = '#tabs-1';
 //이것은 방법이 아니었다
 // orgTarget.replace('#',' ');
 // let tabTarget = orgTarget;
 // a.replace('원래 값', '바꿔줄 값')
 // a 태그들을 클릭하면 클릭한 요소의 속성의 벨류를 가져와서
-let tabTarget = orgTarget.replace('#', '');
-document.getElementById(tabTarget).style.display = 'block';
+// let tabTarget = orgTarget.replace('#', '');
+// document.getElementById(tabTarget).style.display = 'block';
