@@ -35,11 +35,23 @@ for(let i = 0; i < targetLink.length;i++){
 
         let tabTarget = orgTarget.replace('#', '');
         // tabContent들을 선택해서 그중 원하는 것만 실행되도록 해야한다.
+
+        for(let j = 0; j < tabContent.length; j++){
+            tabContent[j].style.display ='none';
+        }
         document.getElementById(tabTarget).style.display = 'block';
+        
+        for(let x = 0; x < targetLink.length;x++){
+            // targetLink를 클릭하면 active를 삭제
+            targetLink[x].classList.remove('active');
+            // 클릭한 타겟만 active 추가
+            e.target.classList.add('active');
+        }
     
     });
 }
-
+// 열자마자 첫 탭은 열려있어라.
+document.getElementById('tabs-1').style.display = 'block';
 
 console.log(targetLink);
 // let orgTarget = '#tabs-1';
@@ -48,5 +60,4 @@ console.log(targetLink);
 // let tabTarget = orgTarget;
 // a.replace('원래 값', '바꿔줄 값')
 // a 태그들을 클릭하면 클릭한 요소의 속성의 벨류를 가져와서
-// let tabTarget = orgTarget.replace('#', '');
-// document.getElementById(tabTarget).style.display = 'block';
+
