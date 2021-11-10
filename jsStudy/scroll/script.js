@@ -19,7 +19,7 @@ for(let i = 0; i < blocks.length; i++){
     one_block.innerHTML = one_block.offsetTop;
 }
 var printerDiv = document.getElementById('printer');
-var range = 200;
+var range = 500;
 window.addEventListener('scroll',change_scroll);
 function change_scroll(){
     printerDiv.innerHTML = document.documentElement.scrollTop;
