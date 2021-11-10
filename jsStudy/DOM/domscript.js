@@ -36,21 +36,21 @@
 // ---------------------------------------!
 
 // 3
-// 속성의 값을 세팅해주거나 가져오는 것
-// getAttribute(), setAttribute()
-// const link = document.querySelector('.testimg a');
-// a에 걸려있는 링크가 궁금할 때는 href 가져오면 된다.
-// link 가 가진 메서드를 불러와준다.
-//> getAttribute(! 이 안에 문자열로 가져오려는 속성을 적어주면 된다. )
-// 만약 class나 id명도 불러오고 싶다면 class나 id를 문자열로 적어주면 된다.
-// console.log(link.getAttribute('href'));
-// console.log(link.getAttribute('class'));
+속성의 값을 세팅해주거나 가져오는 것
+getAttribute(), setAttribute()
+const link = document.querySelector('.testimg a');
+a에 걸려있는 링크가 궁금할 때는 href 가져오면 된다.
+link 가 가진 메서드를 불러와준다.
+> getAttribute(! 이 안에 문자열로 가져오려는 속성을 적어주면 된다. )
+만약 class나 id명도 불러오고 싶다면 class나 id를 문자열로 적어주면 된다.
+console.log(link.getAttribute('href'));
+console.log(link.getAttribute('class'));
 
-// 가져오는 거 뿐만 아니라 세팅도 하고 싶을 때
-// setAttribute('속성이름', '새롭게 불러올 무언가' )는 매개변수가 2개이다.
-// link.setAttribute('href', 'https://www.naver.com')
-// console.log(link.getAttribute('href'));
-// console.log(link.setAttribute('href', 'https://www.naver.com')); // undifind
+가져오는 거 뿐만 아니라 세팅도 하고 싶을 때
+setAttribute('속성이름', '새롭게 불러올 무언가' )는 매개변수가 2개이다.
+link.setAttribute('href', 'https://www.naver.com')
+console.log(link.getAttribute('href'));
+console.log(link.setAttribute('href', 'https://www.naver.com')); // undifind
 
 
 // ---------------------------------------!
