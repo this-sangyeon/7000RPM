@@ -19,16 +19,19 @@ for(let i = 0; i < blocks.length; i++){
     one_block.innerHTML = one_block.offsetTop;
 }
 var printerDiv = document.getElementById('printer');
-var screen_center = document.documentElement.scrollTop + window.innerHeight/2;
+var range = 200;
 window.addEventListener('scroll',change_scroll);
 function change_scroll(){
     printerDiv.innerHTML = document.documentElement.scrollTop;
-    for(var i = 0; i <blocks.length; i++){
-        var one_block =blocks[i];
-        if(one_block.offsetTop < screen_center){
+    var screen_center = document.documentElement.scrollTop + window.innerHeight/2;
+    for(var i = 0; i < blocks.length; i++){
+        var one_block = blocks[i];
+        if(one_block.offsetTop <= screen_center + range && one_block.offsetTop >= screen_center - range){
             one_block.classList.add('blue');
+            one_block.classList.add('alue');
         }else{
             one_block.classList.remove('blue');
+            one_block.classList.remove('alue');
         }
     }
 }
