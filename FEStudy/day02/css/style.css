@@ -1,0 +1,22 @@
+div {
+    background-color: #ff64b4;
+    border: 3px solid #0000ff;
+    margin-bottom: 20px;
+}
+
+/*
+p.none => p태그이면서 클래스가 none
+p , .none => p태그와 클래스가 none
+p .none => p태그의 자손(자식,손자 포함)중 클래스가 none
+p > .none => p태그의 자식만 선택하여 그 중 클래스가 none
+*/
+
+p.none {
+    /* display: none; */
+    display: block;
+}
+
+p.hidden {
+    /* visibility: hidden; */
+    visibility: visible;
+}

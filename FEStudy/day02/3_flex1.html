@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>flex-1</title>
+        <style>
+            #container {
+                width: 1000px;
+                height: 500px;
+                margin: 0 auto;
+                border: 3px solid #ff0000;
+                display: flex;
+                flex-wrap: wrap-reverse;
+                flex-direction: column;
+            }
+
+            #container > div {
+                min-width: 400px;
+                max-width: 400px;
+                /* 부모 크기를 넘지 못하여 크기가 부모에 맞춰졌을 때 min-width */
+                /* height: 100px; */
+                height: 200px;
+                /* flex wrap => flex의 고유 설정으로 인한 공백 발생 */
+                border: 1px solid #000000;
+                background-color: #ffd700;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>flex-1</h2>
+        <div id="container">
+            <div><h2>1</h2></div>
+            <div><h2>2</h2></div>
+            <div><h2>3</h2></div>
+        </div>
+    </body>
+</html>

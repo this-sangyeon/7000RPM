@@ -1,0 +1,26 @@
+body{
+    width: 100%;
+    height: 100%;
+}
+.group{
+    width: 100%;
+    height: 100%;
+}
+
+.ball{
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    background: yellowgreen;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 6.5rem;
+    font-size: 3rem;
+}
+
+.testwrap{ position: absolute;  width: 412px; height: 224px;  background-color: aqua; overflow: hidden;}
+
+.testbox{ display: flex; align-items: center; position: absolute; }
+.test-box{ display: flex; flex-direction: column; flex-wrap: wrap; margin: 0 0 0 4px; }
+.testtext{ width: 361px; font-size: 28px; text-transform: uppercase; }
+.symbol{width: 51px; height: 58px; background-color:tomato;}
